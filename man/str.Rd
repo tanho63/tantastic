@@ -10,7 +10,7 @@ str(...)
 \item{...}{objects passed to str}
 }
 \value{
-
+output of utils::str() but defaults to max.level = 2
 }
 \description{
 Wraps \code{utils::str()} but defaults to max.level = 2

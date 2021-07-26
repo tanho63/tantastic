@@ -5,7 +5,7 @@
 #'
 #' @param ... objects passed to str
 #'
-#' @return
+#' @return output of utils::str() but defaults to max.level = 2
 #' @export
 #'
 #' @examples

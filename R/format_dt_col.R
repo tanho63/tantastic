@@ -25,16 +25,17 @@ fmt_dtcol <- function(dt, df, col_id,
     stop("column_range must be a numeric vector or 'Auto'")
   }
 
-  colour_list <- colorRampPalette(colours)
+  colour_list <- grDevices::colorRampPalette(colours)
 
   for (i in col_id) {
-    breakvalue <- quantile(range(if (column_range == "Auto") {
+
+    breakvalue <- stats::quantile(range(if (column_range == "Auto") {
       df[i]
     } else {
       column_range
     }), probs = seq(0.05, 0.95, 0.05), na.rm = TRUE)
 
-    dt <- DT::formatStyle(dt, i, backgroundColor = styleInterval(breakvalue, colour_list(20)))
+    dt <- DT::formatStyle(dt, i, backgroundColor = DT::styleInterval(breakvalue, colour_list(20)))
   }
   dt
 }
