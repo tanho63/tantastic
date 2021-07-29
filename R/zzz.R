@@ -1,8 +1,10 @@
 .onLoad <- function(libname,pkgname){
 
   if(requireNamespace("extrafont",quietly = TRUE)){
-    import_plex_sans()
-    import_plex_condensed()
+    fontimport_plex_sans()
+    fontimport_bai_jamjuree()
+    # fontimport_plex_condensed()
+    # fontimport_jost()
   }
 
 }
