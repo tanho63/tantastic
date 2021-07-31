@@ -28,7 +28,7 @@
 #'        title="Seminal ggplot2 scatterplot example",
 #'        subtitle="A plot that is only useful for demonstration purposes",
 #'        caption="Brought to you by the letter 'g'") +
-#'   theme_tantastic()
+#'   theme_uv()
 #'
 #' # seminal bar chart
 #' count(mpg, class) %>%
@@ -39,42 +39,42 @@
 #'        title="Seminal ggplot2 bar chart example",
 #'        subtitle="A plot that is only useful for demonstration purposes",
 #'        caption="Brought to you by the letter 'g'") +
-#'   theme_tantastic(grid="Y") +
+#'   theme_uv(grid="Y") +
 #'   theme(axis.text.y=element_blank())
 #' }
 #'
 #'@export
-theme_tantastic <- function(base_family = "IBM Plex Sans Condensed",
-                            base_size = 11.5,
-                            plot_title_family = "Bai Jamjuree",
-                            plot_title_size = 18,
-                            plot_title_face = "bold",
-                            plot_title_margin = 10,
-                            subtitle_family = base_family,
-                            subtitle_size = 14,
-                            subtitle_face = "plain",
-                            subtitle_margin = 15,
-                            strip_text_family = base_family,
-                            strip_text_size = 14,
-                            strip_text_face = "plain",
-                            caption_family = plot_title_family,
-                            caption_size = 14,
-                            caption_face = "plain",
-                            caption_margin = 14,
-                            axis_text_size = base_size,
-                            axis_title_family = base_family,
-                            axis_title_size = 12,
-                            axis_title_face = "plain",
-                            axis_title_just = "rt",
-                            plot_margin = ggplot2::margin(30, 30, 30, 30),
-                            grid = TRUE,
-                            axis = FALSE,
-                            ticks = FALSE) {
+theme_uv <- function(base_family = "IBM Plex Sans Condensed",
+                     base_size = 11.5,
+                     plot_title_family = "Bai Jamjuree",
+                     plot_title_size = 18,
+                     plot_title_face = "bold",
+                     plot_title_margin = 10,
+                     subtitle_family = base_family,
+                     subtitle_size = 14,
+                     subtitle_face = "plain",
+                     subtitle_margin = 15,
+                     strip_text_family = base_family,
+                     strip_text_size = 14,
+                     strip_text_face = "plain",
+                     caption_family = plot_title_family,
+                     caption_size = 14,
+                     caption_face = "plain",
+                     caption_margin = 14,
+                     axis_text_size = base_size,
+                     axis_title_family = base_family,
+                     axis_title_size = 12,
+                     axis_title_face = "plain",
+                     axis_title_just = "rt",
+                     plot_margin = ggplot2::margin(30, 30, 30, 30),
+                     grid = TRUE,
+                     axis = FALSE,
+                     ticks = FALSE) {
 
-  grid_col <- axis_col <- "#333333"
-  def_fore <- "#57c1f1"
-  set_geom_colour_defaults(def_fore)
-  set_geom_font_defaults(base_family, face = "plain", color = "white", size = 3.5)
+  grid_col <- axis_col <- "#cccccc"
+  def_fore <- "#222222"
+  set_geom_colour_defaults("#57c1f1")
+  set_geom_font_defaults(base_family, face = "plain", color = def_fore, size = 3.5)
 
   ret <- ggplot2::theme_minimal(base_family = base_family, base_size = base_size)
 
@@ -100,7 +100,7 @@ theme_tantastic <- function(base_family = "IBM Plex Sans Condensed",
   }
 
   if (inherits(axis, "character") | axis == TRUE) {
-    ret <- ret + ggplot2::theme(axis.line = ggplot2::element_line(color = "white", size = 0.15))
+    ret <- ret + ggplot2::theme(axis.line = ggplot2::element_line(color = def_fore, size = 0.15))
 
     if (inherits(axis, "character")) {
       axis <- tolower(axis)
@@ -198,23 +198,6 @@ theme_tantastic <- function(base_family = "IBM Plex Sans Condensed",
       plot.margin = plot_margin
     )
 
-  bkgrnd <- "#1e1e1e"
-  fgrnd <- "#e0e0e0"
-
-  ret <- ret +
-    ggplot2::theme(
-      rect = ggplot2::element_rect(fill = bkgrnd, color = bkgrnd),
-      plot.background = ggplot2::element_rect(fill = bkgrnd, color = bkgrnd),
-      panel.background = ggplot2::element_rect(fill = bkgrnd, color = bkgrnd),
-      text = ggplot2::element_text(color = fgrnd),
-      axis.text = ggplot2::element_text(color = fgrnd),
-      strip.text = ggplot2::element_text(color = fgrnd),
-      title = ggplot2::element_text(color = "white"),
-      plot.title = ggplot2::element_text(color = "white"),
-      plot.subtitle = ggplot2::element_text(color = "#8e8e93"),
-      line = ggplot2::element_line(color = fgrnd),
-      axis.ticks = ggplot2::element_line(color = fgrnd))
-
   ret
 }
 
@@ -222,7 +205,7 @@ theme_tantastic <- function(base_family = "IBM Plex Sans Condensed",
 #'
 #' @param colour colour of geom default
 #'
-set_geom_colour_defaults <- function(colour) {
+set_geom_colour_defaults <- function(colour = "#57c1f1") {
   geoms <- c(
     "abline", "area", "bar", "boxplot", "col", "crossbar",
     "density", "dotplot", "errorbar", "errorbar",
@@ -243,7 +226,7 @@ set_geom_colour_defaults <- function(colour) {
 #' @param family,face,size,color font family name, face, size and color
 #' @export
 set_geom_font_defaults <- function(family="IBM Plex Sans", face="plain", size=3.5,
-                                      color = "#2b2b2b") {
+                                   color = "#2b2b2b") {
   update_geom_defaults("text", list(family=family, face=face, size=size, color=color))
   update_geom_defaults("label", list(family=family, face=face, size=size, color=color))
 }

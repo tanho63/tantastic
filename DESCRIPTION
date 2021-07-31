@@ -1,24 +1,24 @@
 Package: tantastic
-Title: Fun functions for/by Tan
-Version: 0.1.1
+Title: Fun and Shiny and Pretty Functions
+Version: 0.1.2
 Authors@R: 
     person(given = "Tan",
            family = "Ho",
            role = c("aut", "cre"),
            email = "tan@tanho.ca",
            comment = c(ORCID = "0000-0001-8388-5155"))
-Description: What the package does (one paragraph).
+Description: A personal package of R functions, ggplot themes, and other miscellany
 License: MIT + file LICENSE
 Imports:
-    cli,
-    magrittr,
-    utils
-Suggests: 
+    cli (>= 3.0.0),
     DT (>= 0.15),
     extrafont (>= 0.15),
     ggplot2 (>= 3.3.0),
     purrr (>= 0.3.0),
     shiny (>= 1.6.0),
+    magrittr (>= 2.0.0),
+    utils
+Suggests: 
     testthat (>= 3.0.0)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

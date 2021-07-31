@@ -4,10 +4,12 @@
 \alias{str}
 \title{Tan's str() function}
 \usage{
-str(...)
+str(..., max.level = 2)
 }
 \arguments{
 \item{...}{objects passed to str}
+
+\item{max.level}{sets max.level - by default, 2}
 }
 \value{
 output of utils::str() but defaults to max.level = 2
@@ -19,8 +21,8 @@ Wraps \code{utils::str()} but defaults to max.level = 2
 
 list(
   data = list(
-    mtcars = mtcars,
-    airquality = airquality
+    mtcars = tibble::tibble(mtcars),
+    airquality = tibble::tibble(airquality)
   )
 ) \%>\%
   str()

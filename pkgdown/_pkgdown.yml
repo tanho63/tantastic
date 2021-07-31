@@ -1,0 +1,14 @@
+destination: docs
+
+url: tanho63.github.io/tantastic
+
+template:
+  params:
+    bootswatch: cosmo
+  opengraph:
+    twitter:
+      creator: "@_TanHo"
+      card: summary
+
+development:
+ mode: auto

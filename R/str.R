@@ -4,6 +4,7 @@
 #' Wraps `utils::str()` but defaults to max.level = 2
 #'
 #' @param ... objects passed to str
+#' @param max.level sets max.level - by default, 2
 #'
 #' @return output of utils::str() but defaults to max.level = 2
 #' @export
@@ -12,11 +13,11 @@
 #'
 #' list(
 #'   data = list(
-#'     mtcars = mtcars,
-#'     airquality = airquality
+#'     mtcars = tibble::tibble(mtcars),
+#'     airquality = tibble::tibble(airquality)
 #'   )
 #' ) %>%
 #'   str()
-str <- function(...) {
-  utils::str(..., max.level = 2)
+str <- function(..., max.level = 2) {
+  utils::str(..., max.level = max.level)
 }
