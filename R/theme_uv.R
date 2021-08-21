@@ -227,6 +227,6 @@ set_geom_colour_defaults <- function(colour = "#57c1f1") {
 #' @export
 set_geom_font_defaults <- function(family="IBM Plex Sans", face="plain", size=3.5,
                                    color = "#2b2b2b") {
-  update_geom_defaults("text", list(family=family, face=face, size=size, color=color))
-  update_geom_defaults("label", list(family=family, face=face, size=size, color=color))
+  ggplot2::update_geom_defaults("text", list(family=family, face=face, size=size, color=color))
+  ggplot2::update_geom_defaults("label", list(family=family, face=face, size=size, color=color))
 }
