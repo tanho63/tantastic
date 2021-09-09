@@ -2,7 +2,7 @@ pandoc: 2.7.3
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2021-08-21T17:02Z
+last_built: 2021-09-09T03:31Z
 urls:
   reference: tanho63.github.io/tantastic/reference
   article: tanho63.github.io/tantastic/articles
