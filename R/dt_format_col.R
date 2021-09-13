@@ -17,25 +17,25 @@
 #' @export
 
 fmt_dtcol <- function(dt, df, col_id,
-                      column_range = "Auto",
-                      colours = c("#af8dc3", "#FFFFFF", "#7fbf7b")) {
+                      column_range = NULL,
+                      colours = c("#488F31", "#F1F1F1", "#783DBA")) {
+
   if (!requireNamespace("DT", quietly = TRUE)) stop("Package `DT` is required!", call. = FALSE)
 
-  if (column_range != "Auto" && !is.numeric(column_range)) {
-    stop("column_range must be a numeric vector or 'Auto'")
+  if (!is.null(column_range) && !is.numeric(column_range)) {
+    stop("column_range must be a numeric vector or `NULL`")
   }
 
   colour_list <- grDevices::colorRampPalette(colours)
 
   for (i in col_id) {
 
-    breakvalue <- stats::quantile(range(if (column_range == "Auto") {
-      df[i]
-    } else {
-      column_range
-    }), probs = seq(0.05, 0.95, 0.05), na.rm = TRUE)
+    if(is.null(column_range)) r <- range(df[i],na.rm = TRUE) else r <- range(column_range, na.rm = TRUE)
 
-    dt <- DT::formatStyle(dt, i, backgroundColor = DT::styleInterval(breakvalue, colour_list(20)))
+    b <- stats::quantile(r, probs = seq(0.05, 0.95, 0.05), na.rm = TRUE)
+
+    dt <- DT::formatStyle(dt, i, backgroundColor = DT::styleInterval(b, colour_list(20)))
   }
+
   dt
 }

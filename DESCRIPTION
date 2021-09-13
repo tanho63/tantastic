@@ -1,6 +1,6 @@
 Package: tantastic
 Title: Fun and Shiny and Pretty Functions
-Version: 0.1.2
+Version: 0.1.3
 Authors@R: 
     person(given = "Tan",
            family = "Ho",

@@ -8,8 +8,8 @@ fmt_dtcol(
   dt,
   df,
   col_id,
-  column_range = "Auto",
-  colours = c("#af8dc3", "#FFFFFF", "#7fbf7b")
+  column_range = NULL,
+  colours = c("#488F31", "#F1F1F1", "#783DBA")
 )
 }
 \arguments{
