@@ -17,7 +17,7 @@ You can install the released version of tantastic from [Tan’s R-Universe
 page](https://tanho63.r-universe.dev) with:
 
 ``` r
-install.packages("tantastic", dependencies = TRUE, repos = "https://tanho63.r-universe.dev")
+install.packages("tantastic", dependencies = TRUE, repos = c("https://tanho63.r-universe.dev", getOption("repos")))
 ```
 
 ## Functions List
