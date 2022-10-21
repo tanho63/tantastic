@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>tanho63.github.io/tantastic/404.html</loc>
+  </url>
+  <url>
+    <loc>tanho63.github.io/tantastic/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>tanho63.github.io/tantastic/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>tanho63.github.io/tantastic/authors.html</loc>
+  </url>
+  <url>
     <loc>tanho63.github.io/tantastic/index.html</loc>
+  </url>
+  <url>
+    <loc>tanho63.github.io/tantastic/news/index.html</loc>
   </url>
   <url>
     <loc>tanho63.github.io/tantastic/reference/fmt_dtcol.html</loc>
   </url>
   <url>
     <loc>tanho63.github.io/tantastic/reference/gen_input_map.html</loc>
+  </url>
+  <url>
+    <loc>tanho63.github.io/tantastic/reference/index.html</loc>
   </url>
   <url>
     <loc>tanho63.github.io/tantastic/reference/pipe.html</loc>
