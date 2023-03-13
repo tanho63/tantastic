@@ -7,10 +7,12 @@ When generating inputs reactively, it's sometimes necessary to unbind old inputs
 `\code{unbind_dt_js()} adds the JS to the UI, while \code{unbind_dt()} is called as needed in the server component
 (usually as part of an \code{observeEvent} or \code{eventReactive})}
 \usage{
-unbind_dt(dt_name, session = session)
+unbind_dt(dt_name, session = shiny::getDefaultReactiveDomain())
 }
 \arguments{
 \item{dt_name}{String representing the table's output ID (i.e. to unbind in output$table_alpha, use "table_alpha" as the parameter)}
+
+\item{session}{a \code{shiny::session} object}
 }
 \value{
 a call to the JS that unbinds \code{dt_name}

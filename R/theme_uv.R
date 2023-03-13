@@ -11,7 +11,6 @@
 #' @param axis_title_family,axis_title_face,axis_title_size axis title font family, face and size
 #' @param axis_title_just axis title font justification, one of `[blmcrt]`
 #' @param plot_margin plot margin (specify with `ggplot2::margin()`)
-#' @param grid_col,axis_col grid & axis colors; both default to `#cccccc`
 #' @param grid panel grid (`TRUE`, `FALSE`, or a combination of `X`, `x`, `Y`, `y`)
 #' @param axis_text_size font size of axis text
 #' @param axis add x or y axes? `TRUE`, `FALSE`, "`xy`"
@@ -31,7 +30,7 @@
 #'   theme_uv()
 #'
 #' # seminal bar chart
-#' count(mpg, class) %>%
+#' count(mpg, class) |>
 #'   ggplot(aes(class, n)) +
 #'   geom_col() +
 #'   geom_text(aes(label=n), nudge_y=3) +
@@ -199,34 +198,4 @@ theme_uv <- function(base_family = "IBM Plex Sans Condensed",
     )
 
   ret
-}
-
-#' Update geom defaults
-#'
-#' @param colour colour of geom default
-#'
-set_geom_colour_defaults <- function(colour = "#57c1f1") {
-  geoms <- c(
-    "abline", "area", "bar", "boxplot", "col", "crossbar",
-    "density", "dotplot", "errorbar", "errorbar",
-    "hline", "label", "line", "linerange",
-    "map", "path", "point", "polygon", "rect", "ribbon", "rug", "segment",
-    "step", "text", "tile", "violin", "vline"
-  )
-
-  for (g in geoms) {
-    ggplot2::update_geom_defaults(g, list(colour = colour, fill = colour))
-  }
-}
-
-#' Update matching font defaults for text geoms
-#'
-#' Updates [ggplot2::geom_label] and [ggplot2::geom_text] font defaults
-#'
-#' @param family,face,size,color font family name, face, size and color
-#' @export
-set_geom_font_defaults <- function(family="IBM Plex Sans", face="plain", size=3.5,
-                                   color = "#2b2b2b") {
-  ggplot2::update_geom_defaults("text", list(family=family, face=face, size=size, color=color))
-  ggplot2::update_geom_defaults("label", list(family=family, face=face, size=size, color=color))
 }

@@ -11,7 +11,6 @@
 #' @param axis_title_family,axis_title_face,axis_title_size axis title font family, face and size
 #' @param axis_title_just axis title font justification, one of `[blmcrt]`
 #' @param plot_margin plot margin (specify with `ggplot2::margin()`)
-#' @param grid_col,axis_col grid & axis colors; both default to `#cccccc`
 #' @param grid panel grid (`TRUE`, `FALSE`, or a combination of `X`, `x`, `Y`, `y`)
 #' @param axis_text_size font size of axis text
 #' @param axis add x or y axes? `TRUE`, `FALSE`, "`xy`"
@@ -31,7 +30,7 @@
 #'   theme_tantastic()
 #'
 #' # seminal bar chart
-#' count(mpg, class) %>%
+#' count(mpg, class) |>
 #'   ggplot(aes(class, n)) +
 #'   geom_col() +
 #'   geom_text(aes(label=n), nudge_y=3) +

@@ -12,8 +12,8 @@
 #' @return A DT object with added colour formatting
 #'
 #' @examples
-#' datatable(df_players) %>%
-#'   fmt_dtcol(dt = ., df = df_players, column_range = "Auto", col_id = c("Height", "Weight"))
+#' DT::datatable(mtcars) |>
+#'   fmt_dtcol(df = mtcars, column_range = NULL, col_id = c("mpg", "hp"))
 #' @export
 
 fmt_dtcol <- function(dt, df, col_id,

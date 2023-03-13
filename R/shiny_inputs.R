@@ -54,5 +54,5 @@ gen_input_map <- function(uid, FUN, id_prefix = NULL, ...) {
 
   input_ids <- paste0(id_prefix, uid)
 
-  purrr::map_chr(input_ids, ~FUN(.x,...) %>% as.character(),...)
+  purrr::map_chr(input_ids, ~FUN(.x,...) |> as.character(), ...)
 }

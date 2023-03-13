@@ -31,6 +31,6 @@ Colours DT columns based on the minimum and maximum of each column.
 Defaults to a purple-green colour scheme.
 }
 \examples{
-datatable(df_players) \%>\%
-  fmt_dtcol(dt = ., df = df_players, column_range = "Auto", col_id = c("Height", "Weight"))
+DT::datatable(mtcars) |>
+  fmt_dtcol(df = mtcars, column_range = NULL, col_id = c("mpg", "hp"))
 }

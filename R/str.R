@@ -13,10 +13,10 @@
 #'
 #' list(
 #'   data = list(
-#'     mtcars = tibble::tibble(mtcars),
-#'     airquality = tibble::tibble(airquality)
+#'     mtcars = data.frame(mtcars),
+#'     airquality = data.frame(airquality)
 #'   )
-#' ) %>%
+#' ) |>
 #'   str()
 str <- function(..., max.level = 2) {
   utils::str(..., max.level = max.level)

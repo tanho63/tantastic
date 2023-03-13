@@ -40,6 +40,6 @@ install.packages(
 - `unbind_dt()` "unbinds" the Shiny inputs in a table, which is helpful if they are generated/regenerated reactively.
 - `fmt_dtcol()` colours a DT column based on either the column's minimum and maximum values, or a manually-generated min/max.
 - `theme_tantastic()` is an adapted theme from hrbrmstr/hrbrthemes's theme_modern_rc()
+- `progressively()` adds some helpers for progress bars. Now superseded by `purrr::map()`.
 - `use_client_tz()` and `get_client_tz()` give access to a Shiny user's timezone
-- `progressively()` adds some helpers for progress bars
 

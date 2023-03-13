@@ -20,7 +20,8 @@ page](https://tanho63.r-universe.dev) with:
 install.packages(
   "tantastic", 
   dependencies = TRUE, 
-  repos = c("https://tanho63.r-universe.dev", getOption("repos")))
+  repos = c("https://tanho63.r-universe.dev", getOption("repos"))
+)
 ```
 
 ## Functions List

@@ -59,8 +59,6 @@ theme_tantastic(
 \item{axis}{add x or y axes? \code{TRUE}, \code{FALSE}, "\code{xy}"}
 
 \item{ticks}{ticks if \code{TRUE} add ticks}
-
-\item{grid_col, axis_col}{grid & axis colors; both default to \verb{#cccccc}}
 }
 \description{
 Largely inspired by hrbrthemes's modern rc with other stuff.
@@ -80,7 +78,7 @@ ggplot(mtcars, aes(mpg, wt)) +
   theme_tantastic()
 
 # seminal bar chart
-count(mpg, class) \%>\%
+count(mpg, class) |>
   ggplot(aes(class, n)) +
   geom_col() +
   geom_text(aes(label=n), nudge_y=3) +

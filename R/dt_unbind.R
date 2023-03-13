@@ -27,6 +27,7 @@ unbind_dt_js <- function() {
 #' (usually as part of an \code{observeEvent} or \code{eventReactive})
 #'
 #' @param dt_name String representing the table's output ID (i.e. to unbind in output$table_alpha, use "table_alpha" as the parameter)
+#' @param session a `shiny::session` object
 #'
 #' @return a call to the JS that unbinds \code{dt_name}
 #'
@@ -34,7 +35,7 @@ unbind_dt_js <- function() {
 #' unbind_dt("player_table")
 #' @export
 
-unbind_dt <- function(dt_name, session = session) {
+unbind_dt <- function(dt_name, session = shiny::getDefaultReactiveDomain()) {
   if (!requireNamespace("shiny", quietly = TRUE)) stop("Package `shiny` is required!", call. = FALSE)
 
   session$sendCustomMessage("unbind_table_elements", dt_name)
