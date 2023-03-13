@@ -9,8 +9,8 @@ Authors@R:
            comment = c(ORCID = "0000-0001-8388-5155"))
 Description: A personal package of R functions, ggplot themes, and other miscellany
 License: MIT + file LICENSE
+Depends: R (>= 4.1.1)
 Imports:
-    magrittr (>= 2.0.0),
     utils
 Suggests: 
     DT (>= 0.15),
