@@ -27,5 +27,7 @@ a vector of values
 Read a sequence of Shiny Inputs
 }
 \examples{
-read_inputs(inputid = c("select_1", "select_2"), nullarg = NA, type = "chr")
+if(interactive()){
+  read_inputs(inputid = c("select_1", "select_2"), nullarg = NA, type = "chr")
+}
 }

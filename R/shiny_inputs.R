@@ -8,7 +8,9 @@
 #' @return a vector of values
 #'
 #' @examples
-#' read_inputs(inputid = c("select_1", "select_2"), nullarg = NA, type = "chr")
+#' if(interactive()){
+#'   read_inputs(inputid = c("select_1", "select_2"), nullarg = NA, type = "chr")
+#' }
 #' @export
 
 read_inputs <- function(inputid = NULL,
@@ -44,7 +46,6 @@ read_inputs <- function(inputid = NULL,
 #'
 #' @examples
 #' gen_input_map(1:5, shiny::numericInput, id_prefix = "playerid_", label = "my_label", value = 1)
-#' gen_input_map(FUN = numericInput, id_prefix = "itemprice_", uid = c(1, 3, 5, 7), ...)
 #' @export
 
 gen_input_map <- function(uid, FUN, id_prefix = NULL, ...) {
