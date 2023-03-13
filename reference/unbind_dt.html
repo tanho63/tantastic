@@ -68,13 +68,17 @@ When generating inputs reactively, it's sometimes necessary to unbind old inputs
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">unbind_dt</span><span class="op">(</span><span class="va">dt_name</span>, session <span class="op">=</span> <span class="va">session</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">unbind_dt</span><span class="op">(</span><span class="va">dt_name</span>, session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>dt_name</dt>
 <dd><p>String representing the table's output ID (i.e. to unbind in output$table_alpha, use "table_alpha" as the parameter)</p></dd>
+
+
+<dt>session</dt>
+<dd><p>a <code><a href="https://shiny.rstudio.com/reference/shiny/latest/session.html" class="external-link">shiny::session</a></code> object</p></dd>
 
 </dl></div>
     <div id="value">
@@ -89,7 +93,7 @@ When generating inputs reactively, it's sometimes necessary to unbind old inputs
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">unbind_dt</span><span class="op">(</span><span class="st">"player_table"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in unbind_dt("player_table"):</span> promise already under evaluation: recursive default argument reference or earlier problems?</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in session$sendCustomMessage("unbind_table_elements", dt_name):</span> attempt to apply non-function</span>
 </code></pre></div>
     </div>
   </div>
