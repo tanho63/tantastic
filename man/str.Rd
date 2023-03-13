@@ -21,9 +21,9 @@ Wraps \code{utils::str()} but defaults to max.level = 2
 
 list(
   data = list(
-    mtcars = tibble::tibble(mtcars),
-    airquality = tibble::tibble(airquality)
+    mtcars = data.frame(mtcars),
+    airquality = data.frame(airquality)
   )
-) \%>\%
+) |>
   str()
 }

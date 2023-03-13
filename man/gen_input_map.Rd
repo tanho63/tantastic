@@ -22,6 +22,8 @@ a character vector of shinyInputs
 Generate Shiny Inputs for a vector of identifiers
 }
 \examples{
+if(interactive()){
 gen_input_map(1:5, shiny::numericInput, id_prefix = "playerid_", label = "my_label", value = 1)
-gen_input_map(FUN = numericInput, id_prefix = "itemprice_", uid = c(1, 3, 5, 7), ...)
+gen_input_map(FUN = shiny::numericInput, id_prefix = "itemprice_", uid = c(1, 3, 5, 7))
+}
 }

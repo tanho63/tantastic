@@ -17,17 +17,24 @@ You can install the released version of tantastic from [Tan’s R-Universe
 page](https://tanho63.r-universe.dev) with:
 
 ``` r
-install.packages("tantastic", dependencies = TRUE, repos = "https://tanho63.r-universe.dev")
+install.packages(
+  "tantastic", 
+  dependencies = TRUE, 
+  repos = c("https://tanho63.r-universe.dev", getOption("repos"))
+)
 ```
 
 ## Functions List
 
--   `gen_input_*()` generates a list of Shiny Inputs (either for a list
-    of length *n* or for a given list of identifiers)
--   `read_inputs()` returns the values of a given list of input IDs
--   `unbind_dt()` “unbinds” the Shiny inputs in a table, which is
-    helpful if they are generated/regenerated reactively.
--   `fmt_dtcol()` colours a DT column based on either the column’s
-    minimum and maximum values, or a manually-generated min/max.
--   `theme_tantastic()` is an adapted theme from hrbrmstr/hrbrthemes’s
-    theme\_modern\_rc()
+- `gen_input_*()` generates a list of Shiny Inputs (either for a list of
+  length *n* or for a given list of identifiers)
+- `read_inputs()` returns the values of a given list of input IDs
+- `unbind_dt()` “unbinds” the Shiny inputs in a table, which is helpful
+  if they are generated/regenerated reactively.
+- `fmt_dtcol()` colours a DT column based on either the column’s minimum
+  and maximum values, or a manually-generated min/max.
+- `theme_tantastic()` is an adapted theme from hrbrmstr/hrbrthemes’s
+  theme_modern_rc()
+- `use_client_tz()` and `get_client_tz()` give access to a Shiny user’s
+  timezone
+- `progressively()` adds some helpers for progress bars

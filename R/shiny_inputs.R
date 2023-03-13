@@ -43,8 +43,10 @@ read_inputs <- function(inputid = NULL,
 #' @return a character vector of shinyInputs
 #'
 #' @examples
+#' if(interactive()){
 #' gen_input_map(1:5, shiny::numericInput, id_prefix = "playerid_", label = "my_label", value = 1)
-#' gen_input_map(FUN = numericInput, id_prefix = "itemprice_", uid = c(1, 3, 5, 7), ...)
+#' gen_input_map(FUN = shiny::numericInput, id_prefix = "itemprice_", uid = c(1, 3, 5, 7))
+#' }
 #' @export
 
 gen_input_map <- function(uid, FUN, id_prefix = NULL, ...) {
@@ -54,5 +56,5 @@ gen_input_map <- function(uid, FUN, id_prefix = NULL, ...) {
 
   input_ids <- paste0(id_prefix, uid)
 
-  purrr::map_chr(input_ids, ~FUN(.x,...) %>% as.character(),...)
+  purrr::map_chr(input_ids, ~FUN(.x,...) |> as.character(), ...)
 }
