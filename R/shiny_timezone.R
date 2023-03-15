@@ -51,7 +51,8 @@ use_client_tz <- function(inputId = "_client_tz"){
 #' @seealso <https://en.wikipedia.org/wiki/Tz_database#Area>
 #' @seealso <https://stackoverflow.com/questions/24842229> from which this code is adapted
 get_client_tz <- function(inputId = "_client_tz", session = shiny::getDefaultReactiveDomain()) {
-  offset_hours <- as.numeric(shiny::isolate(session$input[[inputId]])) / 60
+  offset <- shiny::isolate(session$input[[inputId]])
+  offset_hours <- round(as.numeric(offset) / 60)
   tz_prefix <- if(!is.null(offset_hours) || offset_hours > 0) "+" else ""
   tz <- paste0("Etc/GMT", tz_prefix, offset_hours)
   return(tz)
