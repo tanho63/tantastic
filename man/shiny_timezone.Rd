@@ -3,7 +3,7 @@
 \name{use_client_tz}
 \alias{use_client_tz}
 \alias{get_client_tz}
-\title{Get User's Timezone (approximately)}
+\title{Get User's Reported Time Zone}
 \usage{
 use_client_tz(inputId = "_client_tz")
 
@@ -21,13 +21,10 @@ When used in \code{use_client_tz}, may need to be namespaced if called within a 
 \value{
 \code{use_client_tz()}: HTML tags to be included in Shiny UI
 
-\code{get_client_tz()} timezone string to be used by format, lubridate etc.
-Note that Etc/GMT is inverted from the usual UTC string, so UTC-5 is equivalent Etc/GMT+5.
+timezone
 }
 \description{
-Uses some Javascript to pass the client's timezone to the Shiny session. This doesn't
-actually find the client's timezone as much as it finds "how far are they from UTC",
-but it's useful for giving an approximation that passes the smell test.
+Uses some Javascript to pass the client's timezone to the Shiny session.
 }
 \examples{
 if(interactive()){
@@ -37,13 +34,9 @@ shiny::shinyApp(
   server = function(input, output, session) {
     # can be used outside of reactive context, if desired
     tz <- get_client_tz()
-    output$time <- renderText(format(Sys.time(), format = "\%x \%X", tz = tz))
+    time <- format(Sys.time(), format = "\%x \%X", tz = tz)
+    output$time <- renderText(paste0(tz,": ", time))
   }
 )
 }
-}
-\seealso{
-\url{https://en.wikipedia.org/wiki/Tz_database#Area}
-
-\url{https://stackoverflow.com/questions/24842229} from which this code is adapted
 }

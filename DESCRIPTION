@@ -1,23 +1,23 @@
 Package: tantastic
 Title: Fun and Shiny and Pretty Functions
-Version: 0.1.6
+Version: 0.1.7
 Authors@R: 
     person(given = "Tan",
            family = "Ho",
            role = c("aut", "cre"),
            email = "tan@tanho.ca",
            comment = c(ORCID = "0000-0001-8388-5155"))
-Description: A personal package of R functions, ggplot themes, and other miscellany
+Description: A personal package of R functions, ggplot themes, and other miscellany.
 License: MIT + file LICENSE
-Depends: R (>= 4.1.1)
+Depends: R (>= 4.1.0)
 Imports:
+    rlang,
     utils
 Suggests: 
+    cli (>= 3.0.0),
     DT (>= 0.15),
     ggplot2 (>= 3.3.0),
     extrafont (>= 0.15),
-    cli (>= 3.0.0),
-    rlang,
     purrr (>= 0.3.0),
     shiny,
     progressr,

@@ -23,6 +23,3 @@ When generating inputs reactively, it's sometimes necessary to unbind old inputs
 `\code{unbind_dt_js()} adds the JS to the UI, while \code{unbind_dt()} is called as needed in the server component
 (usually as part of an \code{observeEvent} or \code{eventReactive})
 }
-\examples{
-unbind_dt("player_table")
-}

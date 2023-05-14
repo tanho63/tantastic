@@ -6,8 +6,6 @@
 #'
 #' @return Adds JS to HTML head
 #'
-#' @examples
-#' unbind_dt_js()
 #' @export
 unbind_dt_js <- function() {
   if (!requireNamespace("shiny", quietly = TRUE)) stop("Package `shiny` is required!", call. = FALSE)
@@ -31,8 +29,6 @@ unbind_dt_js <- function() {
 #'
 #' @return a call to the JS that unbinds \code{dt_name}
 #'
-#' @examples
-#' unbind_dt("player_table")
 #' @export
 
 unbind_dt <- function(dt_name, session = shiny::getDefaultReactiveDomain()) {

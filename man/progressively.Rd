@@ -24,22 +24,19 @@ map \code{.progress} arguments.
 This is inspired by purrr's \code{safely}, \code{quietly}, and \code{possibly} function decorators.
 }
 \examples{
-
 \donttest{
-read_rosters <- function(){
-  urls <- c("https://github.com/nflverse/nflfastR-roster/raw/master/data/seasons/roster_2020.csv",
-            "https://github.com/nflverse/nflfastR-roster/raw/master/data/seasons/roster_2021.csv")
-
+try({
+urls <- c("https://github.com/nflverse/nflverse-data/releases/download/test/combines.csv",
+            "https://github.com/nflverse/nflverse-data/releases/download/test/combines.csv")
+read_test_files <- function(urls){
   p <- progressr::progressor(along = urls)
   lapply(urls, progressively(read.csv, p))
 }
 
-progressr::with_progress(read_rosters())
+progressr::with_progress(read_test_files(urls))
+# superseded by
+purrr::map(urls, read.csv, .progress = TRUE)
+})
 }
 
-}
-\seealso{
-\code{vignette("Using nflreadr in packages")}
-
-\url{https://nflreadr.nflverse.com/articles/exporting_nflreadr.html} for web version of vignette
 }

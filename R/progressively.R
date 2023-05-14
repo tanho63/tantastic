@@ -10,24 +10,23 @@
 #' @param f a function to add progressr functionality to.
 #' @param p a progressor function similar to that created by `progressr::progressor()`
 #'
+#' @return a function that does the same as `f` but it calls `p()` after iteration.
+#'
 #' @examples
-#'
 #' \donttest{
-#' read_rosters <- function(){
-#'   urls <- c("https://github.com/nflverse/nflfastR-roster/raw/master/data/seasons/roster_2020.csv",
-#'             "https://github.com/nflverse/nflfastR-roster/raw/master/data/seasons/roster_2021.csv")
-#'
+#' try({
+#' urls <- c("https://github.com/nflverse/nflverse-data/releases/download/test/combines.csv",
+#'             "https://github.com/nflverse/nflverse-data/releases/download/test/combines.csv")
+#' read_test_files <- function(urls){
 #'   p <- progressr::progressor(along = urls)
 #'   lapply(urls, progressively(read.csv, p))
 #' }
 #'
-#' progressr::with_progress(read_rosters())
+#' progressr::with_progress(read_test_files(urls))
+#' # superseded by
+#' purrr::map(urls, read.csv, .progress = TRUE)
+#' })
 #' }
-#'
-#' @return a function that does the same as `f` but it calls `p()` after iteration.
-#'
-#' @seealso `vignette("Using nflreadr in packages")`
-#' @seealso <https://nflreadr.nflverse.com/articles/exporting_nflreadr.html> for web version of vignette
 #'
 #' @export
 progressively <- function(f, p = NULL){
