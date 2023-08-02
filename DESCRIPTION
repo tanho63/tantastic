@@ -1,6 +1,6 @@
 Package: tantastic
 Title: Fun and Shiny and Pretty Functions
-Version: 0.1.7
+Version: 0.2.0
 Authors@R: 
     person(given = "Tan",
            family = "Ho",
@@ -11,10 +11,10 @@ Description: A personal package of R functions, ggplot themes, and other miscell
 License: MIT + file LICENSE
 Depends: R (>= 4.1.0)
 Imports:
+    cli (>= 3.0.0),
     rlang,
     utils
 Suggests: 
-    cli (>= 3.0.0),
     DT (>= 0.15),
     ggplot2 (>= 3.3.0),
     extrafont (>= 0.15),

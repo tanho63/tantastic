@@ -11,3 +11,4 @@ The `{tantastic}` package is a fresh start on the previous `{tanmisc}` package.
 - Add `use_client_tz()` and `get_client_tz()`  (v0.1.6)
 - Improve `use_client_tz()` to return the actual reported user timezone (v0.1.7)
 - Fix tests/cran-check stuff.
+- Revise and streamline `dt_fmt_col()` 
