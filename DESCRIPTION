@@ -1,6 +1,6 @@
 Package: tantastic
 Title: Fun and Shiny and Pretty Functions
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: 
     person(given = "Tan",
            family = "Ho",
@@ -24,7 +24,7 @@ Suggests:
     testthat (>= 3.0.0)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 Config/testthat/edition: 3
 URL: https://github.com/tanho63/tantastic
 BugReports: https://github.com/tanho63/tantastic/issues
