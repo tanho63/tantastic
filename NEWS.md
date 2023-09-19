@@ -12,3 +12,5 @@ The `{tantastic}` package is a fresh start on the previous `{tanmisc}` package.
 - Improve `use_client_tz()` to return the actual reported user timezone (v0.1.7)
 - Fix tests/cran-check stuff.
 - Revise and streamline `dt_fmt_col()` 
+- `coalesce_join()` does a left, inner, or full join but coalesces any common columns (except for the join keys) (v0.2.2)
+
