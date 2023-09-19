@@ -3,7 +3,7 @@
 #' @return invisible(TRUE)
 #' @export
 git_cleanup <- function() {
-  system(
+  system2(
     paste(
       # Prune remote branches that no longer exist
       "git fetch -p &&",
