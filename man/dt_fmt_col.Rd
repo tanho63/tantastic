@@ -8,9 +8,10 @@
 dt_fmt_col(
   dt,
   columns,
-  column_range = "auto",
+  column_range = NULL,
   colours = c("#9162C5", "#F1F1F1", "#6BA359"),
-  reverse_colours = FALSE
+  reverse_colours = FALSE,
+  colour_steps = 100
 )
 }
 \arguments{
@@ -25,6 +26,8 @@ be coloured, or "auto" which defaults to the max and min of the table column.}
 defaults to purple-green}
 
 \item{reverse_colours}{logical: reverses direction of colour scale}
+
+\item{colour_steps}{number: how many distinct colours to create, default 100}
 }
 \value{
 A DT object with added colour formatting
