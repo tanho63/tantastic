@@ -38,3 +38,4 @@ install.packages(
 - `use_client_tz()` and `get_client_tz()` give access to a Shiny user’s
   timezone
 - `progressively()` adds some helpers for progress bars
+- `coalesce_join()` joins tables together and coalesces any columns with common names
