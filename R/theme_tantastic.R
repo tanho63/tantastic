@@ -15,6 +15,7 @@
 #' @param axis_text_size font size of axis text
 #' @param axis add x or y axes? `TRUE`, `FALSE`, "`xy`"
 #' @param ticks ticks if `TRUE` add ticks
+#' @param geom_font_size default geom font size
 #'
 #' @examples \dontrun{
 #' library(ggplot2)
@@ -66,6 +67,7 @@ theme_tantastic <- function(base_family = "IBM Plex Sans Condensed",
                             axis_title_face = "plain",
                             axis_title_just = "rt",
                             plot_margin = ggplot2::margin(30, 30, 30, 30),
+                            geom_font_size = 3.5,
                             grid = TRUE,
                             axis = FALSE,
                             ticks = FALSE) {
@@ -73,7 +75,7 @@ theme_tantastic <- function(base_family = "IBM Plex Sans Condensed",
   grid_col <- axis_col <- "#333333"
   def_fore <- "#57c1f1"
   set_geom_colour_defaults(def_fore)
-  set_geom_font_defaults(base_family, face = "plain", color = "white", size = 3.5)
+  set_geom_font_defaults(base_family, face = "plain", color = "white", size = geom_font_size)
 
   ret <- ggplot2::theme_minimal(base_family = base_family, base_size = base_size)
 
@@ -85,9 +87,9 @@ theme_tantastic <- function(base_family = "IBM Plex Sans Condensed",
   if (inherits(grid, "character") | grid == TRUE) {
     ret <- ret +
       ggplot2::theme(
-        panel.grid = ggplot2::element_line(color = grid_col, size = 0.2),
-        panel.grid.major = ggplot2::element_line(color = grid_col, size = 0.2),
-        panel.grid.minor = ggplot2::element_line(color = grid_col, size = 0.15),
+        panel.grid = ggplot2::element_line(color = grid_col, linewidth = 0.2),
+        panel.grid.major = ggplot2::element_line(color = grid_col, linewidth = 0.2),
+        panel.grid.minor = ggplot2::element_line(color = grid_col, linewidth = 0.15),
       )
 
     if (inherits(grid, "character")) {
@@ -99,7 +101,7 @@ theme_tantastic <- function(base_family = "IBM Plex Sans Condensed",
   }
 
   if (inherits(axis, "character") | axis == TRUE) {
-    ret <- ret + ggplot2::theme(axis.line = ggplot2::element_line(color = "white", size = 0.15))
+    ret <- ret + ggplot2::theme(axis.line = ggplot2::element_line(color = "white", linewidth = 0.15))
 
     if (inherits(axis, "character")) {
       axis <- tolower(axis)
@@ -107,17 +109,17 @@ theme_tantastic <- function(base_family = "IBM Plex Sans Condensed",
       if (regexpr("x", axis)[1] < 0) {
         ret <- ret + ggplot2::theme(axis.line.x = ggplot2::element_blank())
       } else {
-        ret <- ret + ggplot2::theme(axis.line.x = ggplot2::element_line(color = axis_col, size = 0.15))
+        ret <- ret + ggplot2::theme(axis.line.x = ggplot2::element_line(color = axis_col, linewidth = 0.15))
       }
       if (regexpr("y", axis)[1] < 0) {
         ret <- ret + ggplot2::theme(axis.line.y = ggplot2::element_blank())
       } else {
-        ret <- ret + ggplot2::theme(axis.line.y = ggplot2::element_line(color = axis_col, size = 0.15))
+        ret <- ret + ggplot2::theme(axis.line.y = ggplot2::element_line(color = axis_col, linewidth = 0.15))
       }
     } else {
       ret <- ret + ggplot2::theme(
-        axis.line.x = ggplot2::element_line(color = axis_col, size = 0.15),
-        axis.line.y = ggplot2::element_line(color = axis_col, size = 0.15)
+        axis.line.x = ggplot2::element_line(color = axis_col, linewidth = 0.15),
+        axis.line.y = ggplot2::element_line(color = axis_col, linewidth = 0.15)
       )
     }
   } else {
@@ -132,9 +134,9 @@ theme_tantastic <- function(base_family = "IBM Plex Sans Condensed",
   } else {
     ret <- ret +
       ggplot2::theme(
-        axis.ticks = ggplot2::element_line(size = 0.15),
-        axis.ticks.x = ggplot2::element_line(size = 0.15),
-        axis.ticks.y = ggplot2::element_line(size = 0.15),
+        axis.ticks = ggplot2::element_line(linewidth = 0.15),
+        axis.ticks.x = ggplot2::element_line(linewidth = 0.15),
+        axis.ticks.y = ggplot2::element_line(linewidth = 0.15),
         axis.ticks.length = grid::unit(5, "pt")
       )
   }

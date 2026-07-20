@@ -1,7 +1,7 @@
 Package: tantastic
 Title: Fun and Shiny and Pretty Functions
-Version: 0.2.2
-Authors@R: 
+Version: 0.2.4
+Authors@R:
     person(given = "Tan",
            family = "Ho",
            role = c("aut", "cre"),
@@ -14,9 +14,9 @@ Imports:
     cli (>= 3.0.0),
     rlang,
     utils
-Suggests: 
+Suggests:
     DT (>= 0.15),
-    ggplot2 (>= 3.3.0),
+    ggplot2 (>= 4.0.0),
     extrafont (>= 0.15),
     purrr (>= 0.3.0),
     shiny,
